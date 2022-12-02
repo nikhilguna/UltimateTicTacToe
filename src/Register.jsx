@@ -10,7 +10,7 @@ export const Register = (props) => {
         e.preventDefault();
         console.log(email);
 
-        const auth = getAuth();
+        const auth = getAuth(); // FIREBASE STUFF
         createUserWithEmailAndPassword(auth, email, pass)
             .then((userCredential) => {
                 // Signed in 

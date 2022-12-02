@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Login } from "./Login";
 import { Register } from "./Register";
+import { Game } from "./Game";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -36,7 +37,9 @@ function App() {
   return (
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> 
+        : currentForm === "register" ? <Register onFormSwitch={toggleForm} /> 
+        : <Game onFormSwitch={toggleForm} />
       }
     </div>
   );

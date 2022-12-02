@@ -23,7 +23,7 @@ export const Login = (props) => {
         e.preventDefault();
         console.log(email);
 
-        const auth = getAuth();
+        const auth = getAuth(); // FIREBASE STUFF
         signInWithEmailAndPassword(auth, email, pass)
             .then((userCredential) => {
                 // Signed in 
