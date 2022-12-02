@@ -16,8 +16,16 @@ export const Login = (props) => {
     //     // ...
     //   }
     // });
+    
     const [email, setEmail] = useState('');
+    // const email_import = (email_child) => {
+    //     setEmail(email_child)
+    // }
+
     const [pass, setPass] = useState('');
+    // const pass_import = (pass_child) => {
+    //     setPass(pass_child)
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,8 +36,9 @@ export const Login = (props) => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                window.alert("logged in");
+                // window.alert(user + " logged in");
                 // ...
+                props.onFormSwitch('game'); // If the sign in is valid, the screen switchs to the game screen
             })
             .catch((error) => {
                 const errorCode = error.code;

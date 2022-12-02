@@ -15,8 +15,9 @@ export const Register = (props) => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                window.alert("signed up");
+                // window.alert("signed up");
                 // ...
+                props.onFormSwitch('game') // if sign up works, moves them to game screen
             })
             .catch((error) => {
                 const errorCode = error.code;

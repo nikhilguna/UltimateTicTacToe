@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import logo from './logo.svg';
 import './App.css';
 import { Login } from "./Login";
 import { Register } from "./Register";
 import { Game } from "./Game";
+import { Random } from "./Random";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -39,7 +39,8 @@ function App() {
       {
         currentForm === "login" ? <Login onFormSwitch={toggleForm} /> 
         : currentForm === "register" ? <Register onFormSwitch={toggleForm} /> 
-        : <Game onFormSwitch={toggleForm} />
+        : currentForm === "game" ? <Game onFormSwitch={toggleForm} />
+        : <Random onFormSwitch={toggleForm} />
       }
     </div>
   );
